@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio | Hritwika Dutta Mazumdar</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f4f8;
+      color: #333;
+    }
+
+    .nav__left img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+    }
+
+    .projects__container,
+    .certifications__container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      padding-top: 2rem;
+    }
+
+    .project__item {
+      background: white;
+      padding: 1rem 1rem 0;
+      border-radius: 1rem;
+      width: 300px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 0.75rem 1rem;
+      background-color: #6d6464;
+      color: white;
+      border-radius: 0 0 1rem 1rem;
+      text-decoration: none;
+      font-weight: 600;
+      border-top: 1px solid #ccc;
+      transition: all 0.3s ease;
+      animation: pulse 1.5s infinite;
+    }
+
+    .btn:hover {
+      background-color: #388e3c;
+      transform: scale(1.03);
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(56, 142, 60, 0.4); }
+      70% { box-shadow: 0 0 0 10px rgba(56, 142, 60, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(56, 142, 60, 0); }
+    }
+
+    .certification__item {
+      background: #f9f9f9;
+      padding: 1.5rem;
+      border-radius: 1rem;
+      width: 300px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .typing {
+      white-space: pre-line;
+      border-right: 2px solid;
+      animation: blink 1s steps(1) infinite;
+      max-width: 800px;
+      margin: 0 auto;
+      font-family: monospace;
+    }
+
+    @keyframes blink {
+      0%, 100% { border-color: transparent; }
+      50% { border-color: black; }
+    }
+
+    .contact__information img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .contact__information img:hover {
+      transform: scale(1.1);
+    }
+
+    .certifications__button-wrapper {
+      text-align: center;
+      padding: 2rem 0;
+    }
+
+    .certifications__button {
+      background-color: #1976d2;
+      padding: 0.75rem 2rem;
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: 600;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s ease;
+    }
+
+    .certifications__button:hover {
+      background-color: #0d47a1;
+    }
+  </style>
+</head>
+<body>
+  <header class="header" id="header">
+    <nav class="nav container" style="display: flex; justify-content: space-between; align-items: center; padding: 1rem;">
+      <div class="nav__left" style="display: flex; align-items: center; gap: 0.5rem;">
+        <img src="dp.jpg" alt="Profile" />
+        <a href="#" class="nav__logo" style="font-size: 1.25rem; font-weight: bold;">Hritwika</a>
+      </div>
+      <ul class="nav__list" style="display: flex; gap: 1.5rem; list-style: none;">
+        <li><a href="#home" class="nav__link">Home</a></li>
+        <li><a href="#education" class="nav__link">Education</a></li>
+        <li><a href="#skills" class="nav__link">Skills</a></li>
+        <li><a href="#projects" class="nav__link">Projects</a></li>
+        <li><a href="#certifications" class="nav__link">Certifications</a></li>
+        <li><a href="#contact" class="nav__link">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main">
+    <section class="section" id="home" style="text-align: center; padding: 3rem 1rem;">
+      <h2 class="section__title">Hello, I'm Hritwika Dutta Mazumdar</h2>
+      <span class="section__subtitle">Aspiring Software Engineer</span>
+      <p style="max-width: 600px; margin: 1rem auto;">Welcome to my portfolio! I’m passionate about coding, building smart systems, and solving real-world problems with technology.</p>
+
+    </section>
+
+    <section class="section" id="education" style="padding: 2rem;">
+      <h2 class="section__title" style="text-align: center;">Education</h2>
+      <pre class="typing" id="eduText"></pre>
+    </section>
+
+    <section class="section" id="skills" style="padding: 2rem;">
+      <h2 class="section__title" style="text-align: center;">Technical Skills</h2>
+      <pre class="typing" id="skillText"></pre>
+    </section>
+
+    <section class="projects section" id="projects">
+      <h2 class="section__title" style="text-align: center;">My Projects</h2>
+      <span class="section__subtitle" style="display: block; text-align: center;">Some highlights of my work</span>
+      <div class="projects__container container grid">
+        <div class="project__item">
+          <h3>Lyrics-Based Song Recommendation</h3>
+          <p>Suggests songs using lyrics similarity with TF-IDF and cosine similarity.</p>
+          <a href="https://github.com/HritwikaDuttaMazumdar/lyrics-based-song-recommedation-system-" target="_blank" class="btn">Content</a>
+        </div>
+        <div class="project__item">
+          <h3>Transport-Management System</h3>
+          <p>Web tool for managing and tracking transport services with real-time updates.</p>
+          <a href="https://github.com/HritwikaDuttaMazumdar/Transport-management-system" target="_blank" class="btn">Content</a>
+        </div>
+        <div class="project__item">
+          <h3>Traffic Prediction</h3>
+          <p>Predicts traffic using deep learning and weather/time data.</p>
+          <a href="https://colab.research.google.com/drive/1taJcE7MhyXy03cjJCwtvt_4uxc91cXbx?usp=sharing" target="_blank" class="btn">Content</a>
+        </div>
+        <div class="project__item">
+          <h3>Movie Website</h3>
+          <p>Movie search app with ratings and overview using real-time API.</p>
+          <a href="https://github.com/HritwikaDuttaMazumdar/Movie-Website" target="_blank" class="btn">Content</a>
+        </div>
+        <div class="project__item">
+          <h3>Breast Cancer Detection with ANN</h3>
+          <p>A neural network model classifies tumors as benign or malignant using the Breast Cancer Wisconsin dataset, aiding early and accurate diagnosis.</p>
+          <a href="https://drive.google.com/drive/folders/1hOgMqlmfzCZOAixkcAZUJqYQJlPtwiPC?usp=sharing" target="_blank" class="btn">Content</a>
+          <a href="https://github.com/HritwikaDuttaMazumdar/Breast-Cancer-Detection.git" target="_blank" class="btn">Content</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="certifications section" id="certifications">
+      <div class="certifications__button-wrapper">
+        <a href="https://drive.google.com/file/d/1LX4G9vZDMOrfm9H091ql03HzalH0wus3/view?usp=sharing" target="blank" class="certifications__button">
+          Certifications
+        </a>
+      </div>
+      <span class="section__subtitle" style="display: block; text-align: center;">Courses and Achievements</span>
+      <div class="certifications__container container grid">
+        <div class="certification__item">
+          <h3>MathWorks</h3>
+          <p>Networking Basics course completion certificate.</p>
+        </div>
+        <div class="certification__item">
+          <h3>CISCO Networking Academy</h3>
+          <p>Completed MATLAB & Machine Learning Onramp.</p>
+        </div>
+        <div class="certification__item">
+          <h3>Scaler Topics</h3>
+          <p>DBMS Fundamentals and Advanced Concepts certificate.</p>
+        </div>
+        <div class="certification__item">
+          <h3>CISCO Networking Academy</h3>
+          <p>Introduction to Data Science & Cybersecurity courses.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact section" id="contact">
+      <h2 class="section__title" style="text-align: center;">Get in Touch</h2>
+      <span class="section__subtitle" style="display: block; text-align: center;">I'd love to hear from you</span>
+      
+      <div class="contact__container" style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; padding: 2rem 1rem;">
+        <div class="contact__information" style="display: flex; align-items: center; gap: 1rem; background: #f8f8f8; padding: 1rem 1.5rem; border-radius: 1rem; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); width: 300px;">
+          <img src="gmail.webp" alt="Gmail">
+          <div>
+            <h3 class="contact__title">Email</h3>
+            <span class="contact__subtitle">hd6313@srmist.edu.in</span>
+          </div>
+        </div>
+        <div class="contact__information" style="display: flex; align-items: center; gap: 1rem; background: #f8f8f8; padding: 1rem 1.5rem; border-radius: 1rem; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); width: 300px;">
+          <img src="linkedin.webp" alt="LinkedIn">
+          <div>
+            <h3 class="contact__title">LinkedIn</h3>
+            <a href="https://linkedin.com/in/hritwika-dutta-mazumdar" class="contact__subtitle" target="_blank">linkedin.com/in/hritwika-dutta-mazumdar</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+  </main>
+
+  <footer class="footer">
+    <div class="footer__bg" style="text-align: center; padding: 1rem; background-color: #333; color: white;">
+      <p class="footer__copy">© 2025 Hritwika Dutta Mazumdar</p>
+    </div>
+  </footer>
+
+  <script>
+    const eduText = `B.Tech in Computer Science Engineering (Information Technology)
+2022–2026
+SRM Institute of Science and Technology, Chennai, India
+
+
+Class 12th, CBSE
+Delhi Public School, Siliguri
+
+Class 10th, ICSE
+Good Shepherd School, Siliguri`;
+
+    const skillText = `Languages: C, C++, Java, Python, HTML, CSS, JavaScript, SQL
+Tools: MATLAB, Linux, VS Code, mySQL, AutoCAD, Tinkercad, Arduino IDE`;
+
+    function typeEffect(elementId, text, speed = 30) {
+      const el = document.getElementById(elementId);
+      let index = 0;
+      function type() {
+        if (index < text.length) {
+          el.textContent += text.charAt(index);
+          index++;
+          setTimeout(type, speed);
+        }
+      }
+      type();
+    }
+
+    window.onload = () => {
+      typeEffect("eduText", eduText);
+      typeEffect("skillText", skillText);
+    };
+  </script>
+</body>
+</html>
